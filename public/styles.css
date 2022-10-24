@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&family=Montez&display=swap");
+
+body {
+  font-family: "Inter";
+}
+.kira {
+  font-family: "Montez";
+  letter-spacing: 6px;
+  font-weight: 700;
+}
+.kira_container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.sec3_over {
+  width: 90%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 5%;
+  background-color: transparent;
+  margin-left: 15%;
+}
+.kira_nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding-right: 1vw;
+}
+.overlay_right {
+  width: 33vw;
+  height: 12vh;
+  float: right;
+}
+.product_contain {
+  width: 24%;
+  height: fit-content;
+  padding: 0;
+  background-color: transparent;
+  overflow: hidden;
+  /* text-align: center; */
+}
+.product_contain h4 {
+  font-weight: 400;
+  color: #607422;
+  width: 80%;
+  margin-left: 10%;
+  padding-top: 1vh;
+  text-align: center;
+}
+.product_contain p {
+  font-weight: 200;
+  color: #fe3217;
+  background-color: #fff;
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.products {
+  width: 100%;
+  height: 45vh;
+  padding: 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.products img {
+  position: absolute;
+  /* top: 0; */
+  width: 24%;
+  height: 45vh;
+  z-index: 2;
+}
+.products button {
+  top: 32%;
+  width: 50%;
+  left: 25%;
+  position: relative;
+  z-index: 4;
+  transition: all 200ms ease-in-out;
+}
+.products button:hover {
+  border-radius: 0;
+  width: 60%;
+  left: 20%;
+}
+.products_icon_div {
+  width: 15%;
+  height: 50%;
+  position: relative;
+  left: 85%;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 3;
+  transform: translateX(100%);
+  transition: all 700ms ease-in-out;
+}
+.products:hover > .products_icon_div {
+  transform: translateX(0%);
+}
+.products_icon {
+  width: 100%;
+  height: 26%;
+  margin-bottom: 10%;
+  background-color: rgb(2 60 111);
+  color: rgb(255 255 255);
+  text-align: center;
+  transition: all 400ms ease-in-out;
+}
+.products_icon:hover {
+  width: 90%;
+  height: 23%;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+}
+.products_icon i {
+  position: relative;
+  top: 26%;
+}
+.sec2_btn {
+  width: 12vw;
+  height: 5vh;
+  font-weight: 200;
+  color: #fff;
+  /* background: transparent; */
+  background-color: rgb(0 0 0 / 62%);
+  border: 1px solid #fff;
+  margin-top: 4%;
+  transition: all 0.3s ease-in-out;
+}
+.sec2_btn:hover {
+  background-color: #000;
+  border-radius: 10px;
+  width: 14vw;
+  border: 1px solid #fff;
+}
+.in_product {
+  margin-top: 15vh;
+}
+.in_product h2 {
+  text-align: center;
+  width: 100vw;
+  font-size: 2rem;
+  font-weight: 300;
+  color: rgb(2 60 111);
+  margin-block: 2vh;
+}
+.kira_overlay {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 20vh;
+  position: fixed;
+  z-index: 200;
+  background: transparent;
+  right: 1%;
+}
+/* .logo_container {
+  width: 15vw;
+  background-color: transparent;
+  
+} */
+.logo {
+  width: 15vw;
+  height: 30vh;
+  position: fixed;
+  left: 43.5vw;
+}
+.l.text {
+  text-align: center;
+  width: 30%;
+  margin-left: 34%;
+  height: 10%;
+  position: fixed;
+  z-index: 201;
+  font-family: "Montez";
+  letter-spacing: 6px;
+  font-weight: 700;
+  margin-top: 4%;
+}
+.kira_left {
+  width: 20%;
+  color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 205;
+}
+.kira_left ul li {
+  list-style: none;
+  margin-bottom: 10%;
+}
+.kira_left a:hover {
+  border-bottom: 2px solid #000;
+  cursor: pointer;
+}
+.overlay_right a:hover {
+  border-bottom: 2px solid #000;
+  cursor: pointer;
+}
+.women_comingSoon,
+.men_comingSoon,
+.clothing_sub {
+  display: none;
+}
+
+.womenNew_text {
+  list-style: none;
+}
+#menNew_text ul li {
+  font-size: 0.7rem;
+}
+.women_cominglist {
+  list-style: none;
+}
+.clothing_sublist {
+  list-style: none;
+}
+.login_register {
+}
+.new_user {
+  font-weight: 500;
+}
