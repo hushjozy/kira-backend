@@ -30,7 +30,7 @@ body{
   flex-wrap: wrap;
   padding-top: 5%;
   background-color: transparent;
-  margin-left: 15%;
+  margin-left: 10%;
 }
 .kira_nav {
   display: flex;
@@ -277,8 +277,9 @@ header{
   z-index: 5000;
   position: absolute;
 }
-
-
+#toggleControl{
+  transition: all 500ms ease-in-out;
+}
 .brand_logo_container {
   width: 10%;
   margin-left: 10%;

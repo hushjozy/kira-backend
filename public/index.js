@@ -407,13 +407,9 @@ products.map((item, i) => {
 const menuToggle = () =>{
   console.log(' toggle btn clicked')
   const sideBar = document.getElementById('kiraLeft');
-  // if(sideBar.style.transform != 'translateX(0)'){
-
-  // }
-  // else if(sideBar.style.transform != 'translateX(50vw)'){
     sideBar.classList.toggle('sidebar_move')
-    // .style.transform != 'translateX(50vw)
-  // }
+    // if(document.getElementById('toggleControl').classList === "fa-solid fa-bars"){
 
-
+    // }
+    document.getElementById('toggleControl').classList.toggle('fa-xmark')
 }
