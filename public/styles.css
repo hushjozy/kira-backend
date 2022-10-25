@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&family=Montez&display=swap");
 
-body {
-  font-family: "Inter";
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+
+body{
+  font-family: 'inter';
+  overflow-x: hidden;
 }
+
+
+
+
 .kira {
   font-family: "Montez";
   letter-spacing: 6px;
@@ -186,19 +194,36 @@ body {
   margin-top: 4%;
 }
 .kira_left {
-  width: 20%;
+  width: 15%;
+  height: 100vh;
   color: #000;
   position: fixed;
-  top: 0;
+  top: 0%;
   left: 0;
   z-index: 205;
+  background-color: rgba(248, 248, 248, .3);
+  backdrop-filter: blur(5px);
+  padding: 2rem 0;
+  transition: all 400ms  ease-in-out;
+  padding-right: 3%;
 }
+
+.sidebar_move{
+  transform: translateX(-50vw);
+}
+
+.men{
+  margin-top: 20vh;
+}
+
 .kira_left ul li {
   list-style: none;
   margin-bottom: 10%;
+  font-weight: 500;
+  font-size: 100%;
 }
 .kira_left a:hover {
-  border-bottom: 2px solid #000;
+color: #FB4648;
   cursor: pointer;
 }
 .overlay_right a:hover {
@@ -227,4 +252,357 @@ body {
 }
 .new_user {
   font-weight: 500;
+}
+.login{
+  text-decoration: none;
+  color: #000;
+}
+
+
+
+/* header */
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ position: relative; 
+  
+ 
+}
+
+
+
+#menu_toggle{
+  z-index: 5000;
+  position: absolute;
+}
+
+
+.brand_logo_container {
+  width: 10%;
+  margin-left: 10%;
+}
+
+.links_list{
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.links_list li{
+  transition: .3s all ease;
+ }
+ 
+
+.links_list li:hover{
+ cursor: pointer;
+ color: #FB4648;
+}
+
+.hamburger{
+  width: 40%;
+  height: fit-content
+}
+.brand_logo{
+ width: 100%;
+}
+
+
+.ham_btn{
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  transition: all .3s ease;
+}
+
+
+.profile, .cart{
+  font-size: 2rem;
+}
+
+
+.ham_btn:hover{
+  color:#FB4648 ;
+  cursor: pointer;
+}
+
+nav{
+  width: 50%;
+}
+nav ul{
+  margin-left: 55%;
+}
+
+/* Hero section styles */
+.hero_section{
+  background: rgb(252,222,209);
+background: linear-gradient(90deg, rgba(252,222,209,1) 0%, rgba(251,215,215,1) 35%, rgba(251,215,216,1) 100%);
+height: 70vh;
+width: 90vw;
+margin: 0 auto;
+border-radius: 2rem ;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+.hero_img{
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.img_container{
+  
+    width: 80%;
+    margin-left: 20%;
+    height: 100%;
+}
+
+.model_img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero_text {
+  margin-left: 15%;
+}
+
+.hero_text h3{
+  font-size: 10rem;
+  font-weight: 900;
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  line-height: 100%;
+  font-family: 'Libre Baskerville', serif;
+
+}
+
+.hero_text p{
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.premium{
+  font-weight: 700;
+  margin-bottom: -2rem;
+  color: #FB4648;
+  font-size: 3rem
+  
+}
+
+.hero_btn{
+  margin-top: 1rem;
+}
+
+.kira_btn{
+  background-color: #FB4648;
+  border-radius: .5rem;
+  padding: 1rem 8%;
+  color: #fff;
+  font-size: 1rem;
+  border: 0;
+  outline: none;
+  transition: .4s all ease;
+
+}
+
+.kira_btn:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+
+}
+
+
+
+
+/* Footer styles */
+
+footer{
+  font-family: 'inter';
+}
+ 
+
+header span{
+	color: #3F71EA;
+}
+ 
+ 
+/* The footer is fixed to the bottom of the page */
+ 
+
+ 
+@media (max-height:800px){
+	footer { position: static; }
+	/* header { padding-top:40px; } */
+}
+ 
+ 
+.footer-distributed{
+	background-color: #2c292f;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+}
+ 
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+ 
+/* Footer left */
+ 
+.footer-distributed .footer-left{
+	width: 30%;
+}
+
+
+ 
+/* The company logo */
+ 
+.footer-distributed .footer-left img{
+	width: 30%;
+}
+ 
+
+/* Footer links */
+ 
+.footer-distributed .footer-links{
+	color:  #ffffff;
+  
+}
+ 
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+ 
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+ 
+/* Footer Center */
+ 
+.footer-distributed .footer-center{
+	width: 35%;
+}
+ 
+ 
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+ 
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+ 
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+ 
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+ 
+.footer-distributed .footer-center p a{
+	color:  #e0ac1c;
+	text-decoration: none;;
+}
+ 
+ 
+/* Footer Right */
+ 
+.footer-distributed .footer-right{
+	width: 30%;
+}
+ 
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+ 
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+ 
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+ 
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+ 
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+ 
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+ 
+/* Here is the code for Responsive Footer */
+/* You can remove below code if you don't want Footer to be responsive */
+ 
+ 
+@media (max-width: 880px) {
+ 
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+ 
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+ 
 }

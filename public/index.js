@@ -403,3 +403,17 @@ products.map((item, i) => {
   ordered.innerHTML = newProduct;
   productRend.append(ordered);
 });
+
+const menuToggle = () =>{
+  console.log(' toggle btn clicked')
+  const sideBar = document.getElementById('kiraLeft');
+  // if(sideBar.style.transform != 'translateX(0)'){
+
+  // }
+  // else if(sideBar.style.transform != 'translateX(50vw)'){
+    sideBar.classList.toggle('sidebar_move')
+    // .style.transform != 'translateX(50vw)
+  // }
+
+
+}
