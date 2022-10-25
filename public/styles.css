@@ -277,8 +277,14 @@ header{
   z-index: 5000;
   position: absolute;
 }
-#toggleControl{
-  transition: all 500ms ease-in-out;
+.fa-solid{
+  transition: all 1.5s ease-in-out;
+}
+.fa-xmark{
+  transition: all 1.5s ease-in-out;
+}
+.fa-bars{
+  transition: all 1.5s ease-in-out;
 }
 .brand_logo_container {
   width: 10%;
