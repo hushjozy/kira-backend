@@ -42,16 +42,65 @@
               </div>
               <nav>
                   <ul>
-                      <li><button class="dashBtn" onclick="showThis(1)"><i class="fa-sharp fa-solid fa-gears"></i>Products</button></li>
-                      <li><button class="dashBtn" onclick="showThis(2)"><i class="fa-sharp fa-solid fa-gears"></i>Blogs</button></li>
-                      <li><button class="dashBtn" onclick="showThis(3)"><i class="fa-sharp fa-solid fa-gears"></i>Orders</button></li>
+                      <li><button class="dashBtn" onclick="showThis(1)"><i class="fa-solid fa-table-list"></i>Products</button></li>
+                      <li><button class="dashBtn" onclick="showThis(2)"><i class="fa-solid fa-rectangle-list"></i>Blogs</button></li>
+                      <li><button class="dashBtn" onclick="showThis(3)"><i class="fa-solid fa-bags-shopping"></i>Orders</button></li>
                   </ul>
               </nav>
           </div>
           <main>
               <div class="mainContent" id="addProd">
                   <div class="createProductContainer">
-                      <div class="createForm">
+
+
+
+                    <!-- Edit product -->
+
+                    <div id="edit_product" class="createForm">
+                        <div class="createProductTitle">
+                            <h3>Edit Product</h3>
+                        </div>
+                        <div class="createProductInput">
+                            <form action="Put" id="createProductForm">
+                                <div class="productTitle">
+                                    <label for="product_title_id">Product title</label>
+                                    <input type="text" id="productTitleId" placeholder="Enter product title"/>
+                                </div>
+                                <div class="productDesc">
+                                    <label for="productDescId">Product Description</label>
+                                    <textarea id="productDescId" cols="50" rows="4"></textarea>
+                                </div>
+
+                                <div class="imgUpload">
+                                    <label for="productImg">Images</label>
+                                    <input id="productImg" type="file" />
+                                </div>
+                                <div class="categoryPrice">
+                                    <div class="productCategory">
+                                        <label for="productCategoryId">Category</label>
+                                        <select id="productCategoryId">
+                                            <option value="Men">Men</option>
+                                            <option value="Women">Women</option>
+                                            <option value="Unisex">Unisex</option>
+                                        </select>
+                                    </div>
+                                    <div class="productPrice">
+                                        <label for="producPriceId">Price</label>
+                                       <input type="number" placeholder="enter price" id="producPriceId"/>
+                                    </div>
+                                </div>
+                                <button class="submitbtn" type="submit">Submit item</button>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+
+
+                    <!-- create product -->
+
+                      <div class="createForm" id="createProd">
                           <div class="createProductTitle">
                               <h3>Create Product</h3>
                           </div>
@@ -81,7 +130,7 @@
                                       </div>
                                       <div class="productPrice">
                                           <label for="producPriceId">Price</label>
-                                         <input type="text" placeholder="enter price" id="producPriceId"/>
+                                         <input type="number" placeholder="enter price" id="producPriceId"/>
                                       </div>
                                   </div>
                                   <button class="submitbtn" type="submit">Submit item</button>

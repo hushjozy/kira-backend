@@ -66,7 +66,7 @@ app.get("/", function (req, res) {
         
           console.log(body);
         });
-        res.send('Deleted successfully')
+        res.status(200)
     
     });
   });
