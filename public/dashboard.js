@@ -260,7 +260,7 @@ $.ajax(settings).done(function (response) {
     </div>
     <h4>${item.product_title}</h4>
       <p>$${item.price}</p>
-      <div class="delete_edit"> <button class="btn_edit-admin" onclick="editProd(${item._id})"><i class="fa-solid fa-pen"></i> Edit </button> <button class="btn_delete-admin" id="${item._id}" onclick="deleteProd(this.id)"><i class="fa-solid fa-trash"></i> Delete </button></div>
+      <div class="delete_edit"> <button class="btn_edit-admin" onclick="editProd()" ><i class="fa-solid fa-pen"></i> Edit </button> <button class="btn_delete-admin" id="${item._id}" onclick="deleteProd(this.id)"><i class="fa-solid fa-trash"></i> Delete </button></div>
   
   `;
     ordered.innerHTML = newProduct;
@@ -287,46 +287,49 @@ function showThis(n){
     document.getElementById("product_catalogs").style.display = "none"
     document.getElementById("blog_catalogs").style.display = "none";
     document.getElementById("addProd").style.display = "block";
- 
+    document.getElementById("createProd").style.display = "block";
+    document.getElementById("edit_product").style.display = "none";
   }
   else if(n === 5){
     document.getElementById("product_catalogs").style.display = "none"
     document.getElementById("blog_catalogs").style.display = "none";
-    document.getElementById("addProd").style.display = "none";
-    document.getElementById("editProd").style.display = "block";
+    document.getElementById("addProd").style.display = "block";
+    document.getElementById("createProd").style.display = "none";
+    document.getElementById("edit_product").style.display = "block";
+    console.log(n, "now");
     
   }
   else{
     console.log(n);
   }
 }
-function editProd(clicked_id){
+function editProd(){
+  console.log("edit log");
   showThis(5)
-  console.log(clicked_id);
 
-  var info = {id: clicked_id}
+  // var info = {id: a}
 
-  $.ajax({
-    type: "POST",
-    url: "/put",
-    headers:{
-      _id : clicked_id,
-      product_title : document.getElementById("editProd").value,
-      img_url: document.getElementById("editProd").value,
-      price: document.getElementById("editProd").value,
-    },
-    data: JSON.stringify(info),
-    success: function () {
-      // Success Page
-      redirect_url = "/login";
-      location.href = redirect_url;
-    },
-    error: function (data) {
-      console.log(data);
-    },
-    dataType: "json",
-    contentType: "application/json",
-  });
+  // $.ajax({
+  //   type: "POST",
+  //   url: "/put",
+  //   headers:{
+  //     _id : a,
+  //     product_title : document.getElementById("editProd").value,
+  //     img_url: document.getElementById("editProd").value,
+  //     price: document.getElementById("editProd").value,
+  //   },
+  //   data: JSON.stringify(info),
+  //   success: function () {
+  //     // Success Page
+  //     redirect_url = "/login";
+  //     location.href = redirect_url;
+  //   },
+  //   error: function (data) {
+  //     console.log(data);
+  //   },
+  //   dataType: "json",
+  //   contentType: "application/json",
+  // });
 }
 function deleteProd(clicked_id){
   var info = {id: clicked_id}
@@ -336,6 +339,7 @@ function deleteProd(clicked_id){
     headers: {_id : clicked_id},
     data: JSON.stringify(info),
     success: function () {
+      
       // Success Page
       redirect_url = "/login";
       location.href = redirect_url;
