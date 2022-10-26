@@ -8,18 +8,53 @@ const app=express();
 var productArry;
 var password ;
 var dbPassword = "admin1234";
-var user; 
+var valid = 0;
+var user;
+var cart; 
 var userPassArry=[
   {
     username : "benji",
     password: "benji1234",
+    cart : 
+    [
+      {product : "armani shoe"},
+      {product : " gucci shoe"}
+    ] 
   },
   {
     username : "femi",
     password: "femi1234",
-  },
+    cart : [
+      {product : "versace shoe"},
+      {product : " sweater"}
+    ]  
+    
+  }
 
 ]
+
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDdX5_3R_a-0peB7OTBTDRgeQL8P7HpGcA",
+//   authDomain: "testings-7fe73.firebaseapp.com",
+//   projectId: "testings-7fe73",
+//   storageBucket: "testings-7fe73.appspot.com",
+//   messagingSenderId: "131523371872",
+//   appId: "1:131523371872:web:7de8e4c7a47577cede7405",
+//   measurementId: "G-QK7J1NLZHF"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+
 
 app.use(express.static(path.join(__dirname, "/public")));
 app.set("view engine", "ejs");
@@ -103,21 +138,20 @@ app.get("/", function (req, res) {
   // var success;
   for (let index = 0; index < userPassArry.length; index++) {
     const element = userPassArry[index];
-    var valid = 0
   console.log(element.password, password);  
     if(password == element.password) {
      user = element.username
-      return  valid = 1
-      // res.send("welcome "+ element.username)
+        valid = 1;
+        cart = element.cart
     }
     else if (password == dbPassword ){
-      return valid = 2
+       valid = 2
   }
-
   }
-  console.log("user recieved ", user );
+  console.log(cart , "this cart");
   if (valid === 1) { 
-    res.send("welcome "+ user)
+    res.send("<h1> Welcome </h1>"+ user+ "<p> here is your cart </p>"+ `<p> ${cart[0].product}</p>` + `<p> ${cart[1].product}</p>`
+   )
   }
   else if (valid === 2 ){
     res.render('dashboard.ejs')
