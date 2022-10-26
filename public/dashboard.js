@@ -138,7 +138,7 @@ var products =
     product_description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     price: 115.0,
-    img_url: "./images/kira1.png",
+    img_url: "/kira1.png",
     vendor: "Kira Coutoure",
     categories: "women",
     liked: { like_status: false, count: 30 },
@@ -149,7 +149,7 @@ var products =
     product_description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     price: 20.5,
-    img_url: "./images/kira2.png",
+    img_url: "/kira2.png",
     vendor: "Armani Coutoure",
     categories: "women",
     liked: { like_status: false, count: 30 },
@@ -160,7 +160,7 @@ var products =
     product_description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     price: 20.3,
-    img_url: "./images/kira3.png",
+    img_url: "/kira3.png",
     vendor: "Kira Coutoure",
     categories: "women",
     liked: { like_status: false, count: 30 },
@@ -171,7 +171,7 @@ var products =
     product_description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     price: 30,
-    img_url: "./images/kira4.png",
+    img_url: "/kira4.png",
     vendor: "Defacto",
     categories: "generic",
     liked: { like_status: false, count: 30 },
@@ -182,7 +182,7 @@ var products =
     product_description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     price: 115,
-    img_url: "./images/kira5.png",
+    img_url: "/kira5.png",
     vendor: "Kira Coutoure",
     categories: "women",
     liked: { like_status: false, count: 30 },
@@ -193,7 +193,7 @@ var products =
     product_description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     price: 115,
-    img_url: "./images/kira6.png",
+    img_url: "/kira6.png",
     vendor: "Kira Coutoure",
     categories: "women",
     liked: { like_status: false, count: 30 },
@@ -204,7 +204,7 @@ var products =
     product_description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     price: 115,
-    img_url: "./images/kira7.png",
+    img_url: "/kira7.png",
     vendor: "Kira Coutoure",
     categories: "women",
     liked: { like_status: false, count: 30 },
@@ -215,7 +215,7 @@ var products =
     product_description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     price: 115,
-    img_url: "./images/kira8.png",
+    img_url: "/kira8.png",
     vendor: "Kira Coutoure",
     categories: "women",
     liked: { like_status: false, count: 30 },
@@ -226,7 +226,7 @@ var products =
     product_description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     price: 115,
-    img_url: "./images/kira9.png",
+    img_url: "/kira9.png",
     vendor: "Kira Coutoure",
     categories: "women",
     liked: { like_status: false, count: 30 },

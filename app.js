@@ -8,6 +8,18 @@ const app=express();
 var productArry;
 var password ;
 var dbPassword = "admin1234";
+var user; 
+var userPassArry=[
+  {
+    username : "benji",
+    password: "benji1234",
+  },
+  {
+    username : "femi",
+    password: "femi1234",
+  },
+
+]
 
 app.use(express.static(path.join(__dirname, "/public")));
 app.set("view engine", "ejs");
@@ -72,31 +84,49 @@ app.get("/", function (req, res) {
   });
 
   app.post("/login", function (req, res) {
-    var request = require("request");
+    // var request = require("request");
     password = req.body.password
     console.log( password);
-var options = { method: 'GET',
-  url: 'https://kiradb-4408.restdb.io/rest/log',
-  headers: 
-   { 'cache-control': 'no-cache',
-     'x-apikey': '6511b0c6c35f829dd107dc7a932f9b0148659' } };
+// var options = { method: 'GET',
+//   url: 'https://kiradb-4408.restdb.io/rest/log',
+//   headers: 
+//    { 'cache-control': 'no-cache',
+//      'x-apikey': '6511b0c6c35f829dd107dc7a932f9b0148659' } };
 
-request(options, function (error, response, dbData) {
-  if (error) throw new Error(error);
+// request(options, function (error, response, dbData) {
+//   if (error) throw new Error(error);
 
   // dbPassword = dbData
   // dbData.map((item) => console.log(item))
   // console.log(dbData);
 
   // var success;
-  if (password === dbPassword ){
-      res.render('dashboard.ejs')
+  for (let index = 0; index < userPassArry.length; index++) {
+    const element = userPassArry[index];
+    var valid = 0
+  console.log(element.password, password);  
+    if(password == element.password) {
+     user = element.username
+      return  valid = 1
+      // res.send("welcome "+ element.username)
+    }
+    else if (password == dbPassword ){
+      return valid = 2
   }
-  else{
-    res.send(" User does not exist")
+
   }
+  console.log("user recieved ", user );
+  if (valid === 1) { 
+    res.send("welcome "+ user)
+  }
+  else if (valid === 2 ){
+    res.render('dashboard.ejs')
+}
+else{
+  res.send(" User does not exist")
+}
 });
-  });
+  // });
   /// delete products
 
 
