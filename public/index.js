@@ -394,7 +394,7 @@ products.map((item, i) => {
             <i class="fa-solid fa-heart"></i>
         </div>
     </div>
-    <button class="sec2_btn">Shop Now</button>
+    <button class="sec2_btn" id="cartitem${i}" onclick="toCart(this.id)">Add to Cart</button>
 </div>
 <h4>${item.product_title}</h4>
 <p>$${item.price}</p>
@@ -413,3 +413,57 @@ const menuToggle = () =>{
     // }
     document.getElementById('toggleControl').classList.toggle('fa-xmark')
 }
+
+let productBuy=[]
+var clickedNum
+function toCart(clicked_id){
+
+  if (document.getElementById(clicked_id).innerText === "Add to Cart"){
+    document.getElementById(clicked_id).innerText = "Remove Product"
+    // array.forEach(element => {
+      
+    // });
+    // if(){
+
+    // }
+    productBuy.push({
+      product_id: 1,
+      product_title: "Armani Black Suit Default",
+      price: 30
+    })
+  }
+    else{
+      document.getElementById(clicked_id).innerText = "Add to Cart"
+
+      for (let index = 0; index < productBuy.length; index++) {
+        const element = productBuy[index];
+         clickedNum = clicked_id.split(/(\d+)/)
+        console.log(parseInt(clickedNum[1]), index);
+        if (parseInt(clickedNum[1]) == index ) {
+          productBuy.splice(index, 1);
+        }
+
+      }
+    }
+    document.getElementById("cartQuan").innerText = productBuy.length
+    console.log(productBuy);
+
+  }
+  const slider = new Slippery(".slippery", {
+    swipes: false,
+    nav: true,
+    dots: true,
+    responsive: {
+      1200: {
+        margins: 0,
+        swipes: true },
+  
+      800: {
+        items: 2,
+        swipes: true,
+        nav: false },
+  
+      600: {
+        items: 3,
+        swipes: true,
+        nav: false } } });

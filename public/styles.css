@@ -266,7 +266,13 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
- position: relative; 
+  position: fixed;
+  z-index: 1000;
+  width: 92vw; 
+  top:0;
+  background: rgba(255, 255, 255, 0.296);
+  backdrop-filter: blur(4px);
+
   
  
 }
@@ -275,7 +281,7 @@ header{
 
 #menu_toggle{
   z-index: 5000;
-  position: absolute;
+  position: fixed;
 }
 .fa-solid{
   transition: all 1.5s ease-in-out;
@@ -341,7 +347,101 @@ nav{
 nav ul{
   margin-left: 55%;
 }
+#cartQuan{
+  color: #fff;
+  background-color: #FB4648;
+  border-radius: 5px;
+  padding: 3px;
+  padding-inline: 5px;
+  font-size: 0.7rem;
+  margin-left: 1px;
+  margin-top: -2px;
+  position: absolute;
+  font-weight: 700;
+}
+.cat3go{
+  background: #5a49435c;
+  padding-block: 2vh;
+  /* border-radius: 20px; */
+  margin-top: 10vh;
+  position: relative;
+  left: -4vw;
+  width: 101vw;
+  backdrop-filter: blur(4px);
+  height: 10vh;
+}
+.cat3go h4{
+  color: #fff;
+  letter-spacing: 5px;
+  font-size: 2.4rem;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 1%;
+}
+.about{
+  width: 90vw;
+  height: fit-content;
+  margin-left: 3vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 4vh;
+}
+.about1{
+  width: 50%;
+  height: 85vh;
+  text-align: center;
+  background-color: #f3f3f3;
+}
+.about1.texab{
+  width: 45%;
+  padding-inline: 5%;
+}
+.about1.texab h4,.reviews h4{
+  font-size: 1.3rem;
+  letter-spacing: .67em;
+  font-weight: 100;
+  font-family: Marcellus-Regular;
+}
+.about1.texab h1, .reviews h1{
+  font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-family: Poppins, sans-serif;
 
+}
+.about1 p, .reviews p{
+  font-family: Poppins, sans-serif;
+  font-weight: 200;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: justify;
+
+
+}
+.about1 img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.slippery{
+  width: 86vw;
+  display: flex;
+  height: fit-content;
+  padding-inline: 7%;
+}
+.reviews{
+  margin-top: 8vh;
+  text-align: center;
+}
+.slippery__item{
+  height: 60vh;
+  width: 80%
+}
+.reviews p{
+  width: 50%;
+  text-align: center;
+  margin-left: 25%;
+}
 /* Hero section styles */
 .hero_section{
   background: rgb(252,222,209);
@@ -349,6 +449,7 @@ background: linear-gradient(90deg, rgba(252,222,209,1) 0%, rgba(251,215,215,1) 3
 height: 70vh;
 width: 90vw;
 margin: 0 auto;
+margin-top: 20vh;
 border-radius: 2rem ;
 display: flex;
 justify-content: space-between;
