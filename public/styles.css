@@ -2,14 +2,28 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
 
+@font-face {
+  font-family: 'futura_thinnormal';
+  src: url("/dominikth-webfont.woff"),
+       url("/dominikth-webfont.woff2") format("woff");
+  font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'marcellusregular';
+    src: url('marcellus-regular-webfont.woff2') format('woff2'),
+         url('marcellus-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
-body{
-  font-family: 'inter';
-  overflow-x: hidden;
 }
 
-
-
+body{
+  /* font-family: 'inter'; */
+  font-family: 'futura_thinnormal';
+  /* font-weight: 200; */
+  overflow-x: hidden;
+}
 
 .kira {
   font-family: "Montez";
@@ -400,7 +414,7 @@ nav ul{
   font-size: 1.3rem;
   letter-spacing: .67em;
   font-weight: 100;
-  font-family: Marcellus-Regular;
+  font-family: 'marcellusregular';
 }
 .about1.texab h1, .reviews h1{
   font-size: 3rem;
@@ -535,7 +549,7 @@ align-items: center;
 /* Footer styles */
 
 footer{
-  font-family: 'inter';
+  font-family: 'futura_thinnormal';
 }
  
 
@@ -559,7 +573,7 @@ header span{
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-	font: bold 16px sans-serif;
+	font: bold 16px;
 	padding: 50px 50px 60px 50px;
 	margin-top: 80px;
 }
