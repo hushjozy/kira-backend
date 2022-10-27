@@ -422,6 +422,72 @@ align-items: center;
 }
 
 
+/* blog styles */
+
+#blog_section{
+  width: 90vw;
+  height: 60vh;
+  
+  margin:0 auto;
+  text-align:center;
+}
+
+.blog_container{
+  width: 90%;
+  height: fit-content;
+
+  margin:0 auto;
+}
+
+.blog_content{
+  display:flex;
+  gap:5%;
+}
+
+.blog_box{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+}
+.blog_img_container{
+  max-width:40rem;
+  object-fit:cover;
+}
+
+.blg_img{
+  max-width: 100%;
+}
+
+.blog_header h4{
+  font-size:3rem;
+}
+
+.post_details a{
+  text-decoration:none;
+  color:gray;
+}
+
+.post_details a:hover{
+  
+  color:#FB4648;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Footer styles */
