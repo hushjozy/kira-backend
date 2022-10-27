@@ -479,10 +479,11 @@ align-items: center;
 
 .hero_text {
   margin-left: 15%;
+  width: 50%;
 }
 
 .hero_text h3{
-  font-size: 10rem;
+  font-size: 7.8rem;
   font-weight: 900;
   margin-top: 0;
   margin-left: 0;
