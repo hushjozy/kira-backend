@@ -67,7 +67,7 @@ body{
 }
 .product_contain h4 {
   font-weight: 400;
-  color: #607422;
+  color: #0a0b07;
   width: 80%;
   margin-left: 10%;
   padding-top: 1vh;
@@ -233,6 +233,7 @@ body{
 .kira_left ul li {
   list-style: none;
   margin-bottom: 10%;
+  font-family: 'Inter';
   font-weight: 500;
   font-size: 100%;
 }
