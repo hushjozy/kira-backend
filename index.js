@@ -140,6 +140,7 @@ var products = [
     categories: "women",
     liked: { like_status: false, count: 30 },
   },
+
   {
     product_id: 2,
     product_title: "Armani Panel Blue Jean",
