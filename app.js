@@ -61,12 +61,6 @@ app.get("/login", function (req, res) {
   res.render("admin.ejs");
 });
 app.post("/putproduct", function (req, res) {
-  // res.writeHead(200, { 'Content-Type': 'text/plain' });
-  // req.on("data", function (chunk) {
-  //   var theId = req.headers._id;
-  //   console.log(theId);
-  // });
-  // res.end('callback(\'{\"msg\": \"OK\"}\')');
   const form = new formidable.IncomingForm();
   form.parse(req, async function (err, fields, files) {
     // Data from text field
@@ -143,6 +137,78 @@ app.post("/deleteproduct", function (req, res) {
     });
     res.status(200);
   });
+});
+
+app.post("/postblog", function (req, res) {
+  // res.writeHead(200, { 'Content-Type': 'text/plain' });
+  // req.on("data", function (chunk) {
+  //   var theId = req.headers._id;
+  //   console.log(theId);
+  // });
+  // res.end('callback(\'{\"msg\": \"OK\"}\')');
+  const form = new formidable.IncomingForm();
+  form.parse(req, async function (err, fields, files) {
+    // Data from text field
+    var toEdit = fields;
+    // mail redesign notification
+    console.log(files + " here");
+
+    if (Object.keys(files).length === 0) {
+      res.send("Oops You didnt Upload any picture Kira");
+    } else if (Object.keys(files).length != 0) {
+      console.log(files + " " + " this file");
+      var oldPath = files.fileupload.filepath;
+      var newPath =
+        path.join(__dirname, "public/img") +
+        "/" +
+        files.fileupload.originalFilename;
+      var rawData = fs.readFileSync(oldPath);
+      fs.writeFile(newPath, rawData, async function (err) {
+        if (err) console.log(err);
+      });
+      // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
+      var request = require("request");
+
+      var options = {
+        method: "POST",
+        url: "https://kiradb-4408.restdb.io/rest/herblog",
+        headers: {
+          "cache-control": "no-cache",
+          "x-apikey": "6511b0c6c35f829dd107dc7a932f9b0148659",
+          "content-type": "application/json",
+        },
+        body: { field1: "xyz", field2: "abc" },
+        json: true,
+      };
+
+      request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
+        console.log(body);
+      });
+      res.status(200).send("Edited successfully");
+    }
+  });
+});
+
+app.post("/deleteblog", function (req, res) {
+  var options = {
+    method: "DELETE",
+    url: "https://kiradb-4408.restdb.io/rest/herblog/(ObjectID)",
+    headers: {
+      "cache-control": "no-cache",
+      "x-apikey": "6511b0c6c35f829dd107dc7a932f9b0148659",
+      "content-type": "application/json",
+    },
+  };
+
+  request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+
+    console.log(body);
+  });
+  res.status(200);
 });
 
 app.post("/login", function (req, res) {
