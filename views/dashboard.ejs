@@ -72,8 +72,8 @@
                                 </div>
 
                                 <div class="imgUpload">
-                                    <label for="productImg">Images</label>
-                                    <input id="productImg" type="file" />
+                                    <label for="fileupload">Images</label>
+                                    <input id="fileupload" name="fileupload" type="file" />
                                 </div>
                                 <div class="categoryPrice">
                                     <div class="productCategory">
@@ -87,9 +87,10 @@
                                     <div class="productPrice">
                                         <label for="producPriceId">Price</label>
                                        <input type="number" placeholder="enter price" id="producPriceId"/>
+                                       <input type="text"  id="editingId" hidden style="opacity:0"/>
                                     </div>
                                 </div>
-                                <button class="submitbtn" type="submit">Submit item</button>
+                                <button class="submitbtn" type="button" onclick="editProd()">Submit item</button>
 
 
                             </form>

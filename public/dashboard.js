@@ -1,5 +1,4 @@
-var products = 
-[
+var products = [
   {
     product_id: 1,
     product_title: "Armani Black Suit Default",
@@ -233,20 +232,20 @@ var products =
   },
 ];
 var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://kiradb-4408.restdb.io/rest/kiras",
-  "method": "GET",
-  "headers": {
+  async: true,
+  crossDomain: true,
+  url: "https://kiradb-4408.restdb.io/rest/kiras",
+  method: "GET",
+  headers: {
     "content-type": "application/json",
     "x-apikey": "63443556626b9c747864aaf1",
-    "cache-control": "no-cache"
-  }
-}
+    "cache-control": "no-cache",
+  },
+};
 
 $.ajax(settings).done(function (response) {
   console.log(response);
-  products = response
+  products = response;
   var productRend = document.getElementById("product_catalogs");
 
   products.map((item, i) => {
@@ -260,53 +259,81 @@ $.ajax(settings).done(function (response) {
     </div>
     <h4>${item.product_title}</h4>
       <p>$${item.price}</p>
-      <div class="delete_edit"> <button class="btn_edit-admin" onclick="editProd()" ><i class="fa-solid fa-pen"></i> Edit </button> <button class="btn_delete-admin" id="${item._id}" onclick="deleteProd(this.id)"><i class="fa-solid fa-trash"></i> Delete </button></div>
+      <div class="delete_edit"> <button class="btn_edit-admin"  onclick="showThis(5, {'b': '${item._id}'})" ><i class="fa-solid fa-pen"></i> Edit </button> <button class="btn_delete-admin" id="${item._id}" onclick="deleteProd(this.id)"><i class="fa-solid fa-trash"></i> Delete </button></div>
   
   `;
     ordered.innerHTML = newProduct;
     productRend.append(ordered);
   });
-  
+
   console.log(body);
 });
 
-function showThis(n){
-  if(n === 2){
+function showThis(n, b) {
+  if (n === 2) {
     document.getElementById("product_catalogs").style.display = "none";
     document.getElementById("blog_catalogs").style.display = "flex";
     document.getElementById("addProd").style.display = "none";
-
-  }
-  else if(n === 1){
-    document.getElementById("product_catalogs").style.display = "flex"
+  } else if (n === 1) {
+    document.getElementById("product_catalogs").style.display = "flex";
     document.getElementById("blog_catalogs").style.display = "none";
     document.getElementById("addProd").style.display = "none";
-
-  }
-  else if(n === 4){
-    document.getElementById("product_catalogs").style.display = "none"
+  } else if (n === 4) {
+    document.getElementById("product_catalogs").style.display = "none";
     document.getElementById("blog_catalogs").style.display = "none";
     document.getElementById("addProd").style.display = "block";
     document.getElementById("createProd").style.display = "block";
     document.getElementById("edit_product").style.display = "none";
-  }
-  else if(n === 5){
-    document.getElementById("product_catalogs").style.display = "none"
+  } else if (n === 5) {
+    document.getElementById("product_catalogs").style.display = "none";
     document.getElementById("blog_catalogs").style.display = "none";
     document.getElementById("addProd").style.display = "block";
     document.getElementById("createProd").style.display = "none";
     document.getElementById("edit_product").style.display = "block";
-    console.log(n, "now");
-    
-  }
-  else{
+    document.getElementById("editingId").value = b.b;
+    console.log(n + " now " + b.b);
+  } else {
     console.log(n);
   }
 }
-function editProd(){
-  console.log("edit log");
-  showThis(5)
+function editProd() {
+  var formData = new FormData();
 
+  formData.append("_Id", document.getElementById("editingId").value);
+  formData.append("fileupload", fileupload.files[0]);
+  formData.append(
+    "product_title",
+    document.getElementById("productTitleId").value
+  );
+  formData.append(
+    "product_description",
+    document.getElementById("productDescId").value
+  );
+  formData.append(
+    "price",
+    parseInt(document.getElementById("producPriceId").value)
+  );
+  formData.append(
+    "categories",
+    document.getElementById("productCategoryId").value
+  );
+  formData.append("vendor", "Kira Coutoure");
+
+  console.log("edit log " + formData);
+  fetch("http://localhost:3000/putproduct", {
+    method: "POST",
+    body: formData,
+  }).then(function (response) {
+    if (response.status === 200) {
+      alert("Edit Successful");
+      redirect_url = "/login";
+      location.href = redirect_url;
+    } else {
+      alert(
+        "There was a problem sending your cv. Please Email us with complaint at cv@remedyportal.com"
+      );
+    }
+  });
   // var info = {id: a}
 
   // $.ajax({
@@ -331,15 +358,14 @@ function editProd(){
   //   contentType: "application/json",
   // });
 }
-function deleteProd(clicked_id){
-  var info = {id: clicked_id}
+function deleteProd(clicked_id) {
+  var info = { id: clicked_id };
   $.ajax({
     type: "POST",
-    url: "/delete",
-    headers: {_id : clicked_id},
+    url: "/deleteproduct",
+    headers: { _id: clicked_id },
     data: JSON.stringify(info),
     success: function () {
-      
       // Success Page
       redirect_url = "/login";
       location.href = redirect_url;
