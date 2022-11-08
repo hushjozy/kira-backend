@@ -470,7 +470,8 @@ const slider = new Slippery(".slippery", {
 });
 
 var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-if (width > 0 < 420) {
+console.log("screen width " + width);
+if (width < 420) {
   document.getElementById("mob1").style.width = "100vw";
   document.getElementById("mob2").style.width = "100vw";
   document.getElementById("mob3").style.width = "100vw";

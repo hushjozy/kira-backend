@@ -5,7 +5,23 @@
   }
   header {
     height: 14vh;
-    width: 66vw;
+    width: 100vw;
+    margin-left: -2vw;
+  }
+  .links_list {
+    gap: 0.5rem;
+  }
+  .kira_left {
+    width: 45%;
+  }
+  nav ul {
+    margin-left: 8%;
+    font-size: 0.9rem;
+    padding-right: 1rem;
+  }
+  .profile,
+  .fa-solid.cart {
+    font-size: 1.2rem;
   }
   .fa-solid {
     font-size: 1.4rem;
@@ -17,7 +33,7 @@
   }
   .brand_logo_container {
     width: 30%;
-    margin-left: 55%;
+    margin-left: 35%;
     position: absolute;
   }
   .links_list li {
@@ -66,6 +82,9 @@
     height: 45vh;
     z-index: 2;
     object-fit: cover;
+  }
+  .products button {
+    top: 34%;
   }
   .img_container {
     width: 100%;
