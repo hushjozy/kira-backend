@@ -334,31 +334,62 @@ function editProd() {
       );
     }
   });
-  // var info = {id: a}
-
-  // $.ajax({
-  //   type: "POST",
-  //   url: "/put",
-  //   headers:{
-  //     _id : a,
-  //     product_title : document.getElementById("editProd").value,
-  //     img_url: document.getElementById("editProd").value,
-  //     price: document.getElementById("editProd").value,
-  //   },
-  //   data: JSON.stringify(info),
-  //   success: function () {
-  //     // Success Page
-  //     redirect_url = "/login";
-  //     location.href = redirect_url;
-  //   },
-  //   error: function (data) {
-  //     console.log(data);
-  //   },
-  //   dataType: "json",
-  //   contentType: "application/json",
-  // });
 }
 function deleteProd(clicked_id) {
+  var info = { id: clicked_id };
+  $.ajax({
+    type: "POST",
+    url: "/deleteproduct",
+    headers: { _id: clicked_id },
+    data: JSON.stringify(info),
+    success: function () {
+      // Success Page
+      redirect_url = "/login";
+      location.href = redirect_url;
+    },
+    error: function (data) {
+      console.log(data);
+    },
+    dataType: "json",
+    contentType: "application/json",
+  });
+}
+
+// BLOG POST ///////////////
+
+function postBlog() {
+  var formData = new FormData();
+
+  formData.append("fileupload", fileupload.files[0]);
+  formData.append("post_title", document.getElementById("post_title").value);
+  formData.append(
+    "post_description",
+    document.getElementById("post_description").value
+  );
+  formData.append("pblogImg", document.getElementById("pblogImg").value);
+  formData.append("author", document.getElementById("author").value);
+
+  console.log("edit log " + formData);
+  fetch("http://localhost:3000/postblog", {
+    method: "POST",
+    body: formData,
+  }).then(function (response) {
+    if (response.status === 200) {
+      alert("Edit Successful");
+      // redirect_url = "/login";
+      // location.href = redirect_url;
+      console.log("form submitted");
+    } else {
+      alert(
+        "There was a problem sending your cv. Please Email us with complaint at cv@remedyportal.com"
+      );
+    }
+  });
+}
+
+// DELETE BLOG ///////////
+
+function deleteBlog(clicked_id) {
   var info = { id: clicked_id };
   $.ajax({
     type: "POST",

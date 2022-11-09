@@ -193,9 +193,10 @@ app.post("/postblog", function (req, res) {
 });
 
 app.post("/deleteblog", function (req, res) {
+  var deleteId = req.body.id;
   var options = {
     method: "DELETE",
-    url: "https://kiradb-4408.restdb.io/rest/herblog/(ObjectID)",
+    url: `https://kiradb-4408.restdb.io/rest/herblog/${deleteId}`,
     headers: {
       "cache-control": "no-cache",
       "x-apikey": "6511b0c6c35f829dd107dc7a932f9b0148659",
