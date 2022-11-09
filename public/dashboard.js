@@ -149,7 +149,7 @@ var products = [
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     price: 20.5,
     img_url: "/kira2.png",
-    vendor: "Armani Coutoure",
+    vendor: "nodemani Coutoure",
     categories: "women",
     liked: { like_status: false, count: 30 },
   },
