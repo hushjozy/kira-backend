@@ -149,20 +149,21 @@ app.post("/postblog", function (req, res) {
   const form = new formidable.IncomingForm();
   form.parse(req, async function (err, fields, files) {
     // Data from text field
-    var toEdit = fields;
+    var toPost = fields;
     // mail redesign notification
-    console.log(files + " here");
+    console.log(toPost , " here");
 
     if (Object.keys(files).length === 0) {
       res.send("Oops You didnt Upload any picture Kira");
     } else if (Object.keys(files).length != 0) {
-      console.log(files + " " + " this file");
-      var oldPath = files.fileupload.filepath;
+      var oldPath = files.blogImg.filepath;
       var newPath =
         path.join(__dirname, "public/img") +
         "/" +
-        files.fileupload.originalFilename;
+        files.blogImg.originalFilename;
       var rawData = fs.readFileSync(oldPath);
+      console.log(oldPath + "it says " + newPath);
+
       fs.writeFile(newPath, rawData, async function (err) {
         if (err) console.log(err);
       });
@@ -178,7 +179,12 @@ app.post("/postblog", function (req, res) {
           "x-apikey": "6511b0c6c35f829dd107dc7a932f9b0148659",
           "content-type": "application/json",
         },
-        body: { field1: "xyz", field2: "abc" },
+         body: {
+           blogTitle: toPost.post_title,
+           blog_img : `/img/${files.blogImg.originalFilename}`,
+             story: post_description,
+             author: author,
+         },
         json: true,
       };
 

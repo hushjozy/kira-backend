@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/dashboard.css" />
     <link rel="stylesheet" href="/createProduct.css">
+    <!-- <link rel="stylesheet" href="/createBlog.css"> -->
 
     <script
       src="https://kit.fontawesome.com/2bbbf54a3f.js"
@@ -135,7 +136,7 @@
                                          <input type="number" placeholder="enter price" id="producPriceId"/>
                                       </div>
                                   </div>
-                                  <button class="submitbtn" type="submit">Submit item</button>
+                                  <button class="submitbtn" type="button">Submit item</button>
 
 
                               </form>
@@ -197,9 +198,43 @@
               <div class="sec3_over" id="blog_catalogs" >
                 <div class="product_create">
                   <h2>Blog Grid</h2>
-                  <button class="create_new" 5>+ New Blog</button>
+                  <button class="create_new" onclick="showThis(7)" >+ New Blog</button>
                 </div>
               </div>
+
+
+               <!-- create new blog-->
+
+               <div class="createBlogForm " id="createBlog">
+                <div class="createProductTitle">
+                    <h3>Create a Blog Post</h3>
+                </div>
+                <div class="createProductInput">
+                    <div  id="createProductForm">
+                        <div >
+                            <label for="blogTitleId">Post title</label>
+                            <input type="text" id="blogTitleId" placeholder="Enter product title"/>
+                        </div>
+                        <div class="productDesc">
+                            <label for="blogDescId">Post content</label>
+                            <textarea id="blogDescId" cols="50" rows="8"></textarea>
+                        </div>
+
+                        <div class="imgUpload">
+                            <label for="blogImg">Images</label>
+                            <input id="blogImg" type="file" />
+                        </div>
+                        <div class="author_container">
+                            <label for="authorId">Author</label>
+                            <input type="text" id="authorId" placeholder="Enter author name" class="author_input"/>
+                        </div>
+                      
+                        <button onclick="postBlog()" class="submitbtn" type="submit">Submit item</button>
+
+
+                    </div> 
+                </div>
+            </div>
           </main>
       </div>
   </section>

@@ -266,7 +266,7 @@ $.ajax(settings).done(function (response) {
     productRend.append(ordered);
   });
 
-  console.log(body);
+  // console.log(body);
 });
 
 function showThis(n, b) {
@@ -274,8 +274,11 @@ function showThis(n, b) {
     document.getElementById("product_catalogs").style.display = "none";
     document.getElementById("blog_catalogs").style.display = "flex";
     document.getElementById("addProd").style.display = "none";
+    document.getElementById("createBlog").style.display = "none";
+
   } else if (n === 1) {
     document.getElementById("product_catalogs").style.display = "flex";
+    document.getElementById("createBlog").style.display = "none";
     document.getElementById("blog_catalogs").style.display = "none";
     document.getElementById("addProd").style.display = "none";
   } else if (n === 4) {
@@ -284,14 +287,24 @@ function showThis(n, b) {
     document.getElementById("addProd").style.display = "block";
     document.getElementById("createProd").style.display = "block";
     document.getElementById("edit_product").style.display = "none";
+    document.getElementById("createBlog").style.display = "none";
   } else if (n === 5) {
     document.getElementById("product_catalogs").style.display = "none";
     document.getElementById("blog_catalogs").style.display = "none";
     document.getElementById("addProd").style.display = "block";
     document.getElementById("createProd").style.display = "none";
     document.getElementById("edit_product").style.display = "block";
+    document.getElementById("createBlog").style.display = "none";
     document.getElementById("editingId").value = b.b;
     console.log(n + " now " + b.b);
+   } else if (n === 7) {
+      document.getElementById("product_catalogs").style.display = "none";
+      document.getElementById("blog_catalogs").style.display = "none";
+      document.getElementById("createBlog").style.display = "block";
+      document.getElementById("addProd").style.display = "none";
+      document.getElementById("createProd").style.display = "none";
+      document.getElementById("edit_product").style.display = "none";
+
   } else {
     console.log(n);
   }
@@ -357,25 +370,25 @@ function deleteProd(clicked_id) {
 
 // BLOG POST ///////////////
 
-function postBlog() {
+async function postBlog() {
   var formData = new FormData();
 
   formData.append("fileupload", fileupload.files[0]);
-  formData.append("post_title", document.getElementById("post_title").value);
+  formData.append("post_title", document.getElementById("blogTitleId").value);
   formData.append(
     "post_description",
-    document.getElementById("post_description").value
+    document.getElementById("blogDescId").value
   );
-  formData.append("pblogImg", document.getElementById("pblogImg").value);
-  formData.append("author", document.getElementById("author").value);
+  formData.append("blogImg", document.getElementById("blogImg").value);
+  formData.append("author", document.getElementById("authorId").value);
 
   console.log("edit log " + formData);
-  fetch("http://localhost:3000/postblog", {
+  await fetch("http://localhost:3000/postblog", {
     method: "POST",
     body: formData,
   }).then(function (response) {
     if (response.status === 200) {
-      alert("Edit Successful");
+      alert("pst successful Successful");
       // redirect_url = "/login";
       // location.href = redirect_url;
       console.log("form submitted");
