@@ -1,0 +1,116 @@
+.container {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+  }
+  .container_left {
+    width: 65%;
+  }
+  .container_right {
+    width: 25%;
+    height: 28%;
+    margin-left: 10%;
+    margin-top: 4%;
+  }
+  .cr_blog_box {
+    width: 90%;
+    height: 100%;
+    margin-left: 10%;
+  }
+  .kira_Blog {
+    margin-top: 6%;
+    margin-left: 7%;
+    width: 100%;
+    height: 80%;
+  }
+  .kiraBlog {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .header {
+    margin-left: 8%;
+  }
+  .blogText {
+    margin-left: 8%;
+    width: 100%;
+  }
+  
+  .blog_con {
+    margin-left: 8%;
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #022;
+    justify-content: flex-start;
+  }
+  .blogLeft {
+    width: 80%;
+  }
+  .blogRight {
+    width: 25%;
+  }
+  
+  #blog_section {
+    width: 90vw;
+    height: 60vh;
+    width: 100vw;
+    height: fit-content;
+  
+    margin: 0 auto;
+    text-align: center;
+  }
+  .blog_container {
+    width: 90%;
+    height: fit-content;
+  
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin: 0 auto;
+  }
+  
+  .blog_content {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5%;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    padding-bottom: 2vh;
+  }
+  
+  .blog_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 55vh;
+    font-family: "Inter";
+    font-size: 1.2rem;
+  }
+  
+  .blog_header {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .blog_header h4 {
+    font-size: 3rem;
+  }
+  .right_img {
+    width: 60%;
+    height: 80%;
+    object-fit: cover;
+    margin-left: 20%;
+  }
+  .crBlogBox h3 {
+    margin-bottom: 0;
+    font-size: 1rem;
+    margin-left: 20%;
+  }
+  .crBlogBox p {
+    /* margin-top: 0; */
+    font-size: 0.8rem;
+    margin-left: 20%;
+  }
+  
